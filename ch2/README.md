@@ -7,3 +7,8 @@
 - p57 **顶层const** 表示本身是个常量， **底层const** 表示指针所指的对象是个一个常量。
 - p58 拷贝的对象必须具有相同的底层const资格，顶层const不影响拷贝。
     - int* 能转换成 const int*
+- p62 auto忽略顶层const，保留底层const。
+- p63 decltype(*p) c    //c是int &，必须初始化
+- p63 decltype((x))【双层括号】的结果永远是引用。
+- p64 赋值会产生引用，引用的类型就是左值的类型。
+    eg: decltype(a=b) d=a;  //d的类型是int&，且a=b不做实际运算。
