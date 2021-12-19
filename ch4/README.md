@@ -7,7 +7,7 @@
   当一个左值被当作右值使用时，实际使用的是它的内容（值）。
 - p123 只有4种运算符规定了运算对象的求值顺序。（ [ `&&` ]   [ `||` ]  [ `？：` ]  [ ` ,` ] ）  
 - p124 布尔值不该参与运算
-    ``` 
+    ```  cpp
     bool b = true;    
     bool b2 = -b;   //b2是true
     // true是1，所以b2=-1，显然不等于0，所以是true
@@ -18,7 +18,7 @@
 - p132 *pbeg++ 返回的是pbeg一开始指向的值，且pbeg指针向前移动一个位置(由于后置++的特性)。  
   等价于 *pbeg; ++pbeg;
 - p141 exercise 4.33
-    ```
+    ``` cpp
     someValue ? ++x, ++y : --x, --y
     
     /*
@@ -27,4 +27,12 @@
      * 若 someValue = false, 则 --x, 返回--y
      */
     ```
-    
+- p145 **强制类型转换**  
+    - **static_cast** 任何具有明确定义的类型转换，只要不包含底层const，都可以使用static_cast
+    - **const_cast** 只能改变运算对象的底层const
+    - **reinterpret_cast** 通常为运算对象的位模式提供较低层次上的重新解释    
+    ``` cpp
+        const char *cp;
+        static_cast<string>(pc);    //正确，字符串字面值转换成 string 类型
+        const_cast<string>(pc);     // 错误，const_cast 只能改变常量属性
+    ```
