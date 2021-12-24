@@ -1,14 +1,11 @@
 #include <iostream>
-#include <string>
 using std::cin;
 using std::cout;
 using std::endl;
-using std::string;
 int main()
 {
     int aCnt = 0, eCnt = 0, iCnt = 0, oCnt = 0, uCnt = 0;
     int sCnt = 0, tCnt = 0, nCnt = 0;
-    string s;
     char ch;
     while (cin >> std::noskipws >> ch) //std::noskipws 不忽略空白字符
     {
