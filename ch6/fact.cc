@@ -1,4 +1,4 @@
-#include <iostream>
+#include "Chapter6.h"
 
 int fact(int val) {
     int ret = 1;
@@ -7,8 +7,4 @@ int fact(int val) {
         --val;
     }
     return ret;
-}
-
-int main() {
-    std::cout << fact(30);
 }
