@@ -20,6 +20,18 @@
     Record lookup(Account*);    
     Record lookup(const Account*);
     ```
+- p211
+    在C++中，名字查找发生在类型检查之前。  
+- p214 constexpr函数
+    - 函数的返回类型以及所有形参的类型都得是字面值类型
+    - 函数体中必须有且只有一条return语句
+    - constexpr函数被隐式地指定为内联函数
+    - constexpr函数不一定返回常量表达式
+- p215
+    内联函数和constexpr函数通常定义放在头文件。  
+
+
+
 
 ---
 ### 6.18
@@ -47,3 +59,10 @@ string ss[10];
 decltype(ss) &func();
 ```
 
+### 6.44
+```cpp
+inline bool isShorter(const string &s1, const string &s2)
+{
+    return s1.size() < s2.size();
+    }
+```
